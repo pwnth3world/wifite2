@@ -32,7 +32,7 @@ class Configuration(object):
         cls.verbose = 0 # Verbosity of output. Higher number means more debug info about running processes.
         cls.print_stack_traces = True
 
-        cls.kill_conflicting_processes = False
+        cls.kill_conflicting_processes = True
 
         cls.scan_time = 0 # Time to wait before attacking all targets
 
@@ -45,7 +45,7 @@ class Configuration(object):
         cls.clients_only = False # Only show targets that have associated clients
         cls.five_ghz = False # Scan 5Ghz channels
         cls.show_bssids = False # Show BSSIDs in targets list
-        cls.random_mac = False # Should generate a random Mac address at startup.
+        cls.random_mac = True # Should generate a random Mac address at startup.
         cls.no_deauth = False # Deauth hidden networks & WPA handshake targets
         cls.num_deauths = 1 # Number of deauth packets to send to each target.
 
@@ -74,7 +74,7 @@ class Configuration(object):
         # WPA variables
         cls.wpa_filter = False # Only attack WPA networks
         cls.wpa_deauth_timeout = 15 # Wait time between deauths
-        cls.wpa_attack_timeout = 500 # Wait time before failing
+        cls.wpa_attack_timeout = 180 # Wait time before failing
         cls.wpa_handshake_dir = 'hs' # Dir to store handshakes
         cls.wpa_strip_handshake = False # Strip non-handshake packets
         cls.ignore_old_handshakes = False # Always fetch a new handshake
@@ -102,7 +102,7 @@ class Configuration(object):
 
         # WPS variables
         cls.wps_filter  = False  # Only attack WPS networks
-        cls.no_wps      = False  # Do not use WPS attacks (Pixie-Dust & PIN attacks)
+        cls.no_wps      = True  # Do not use WPS attacks (Pixie-Dust & PIN attacks)
         cls.wps_only    = False  # ONLY use WPS attacks on non-WEP networks
         cls.use_bully   = False  # Use bully instead of reaver
         cls.wps_pixie   = True
